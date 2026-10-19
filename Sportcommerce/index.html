@@ -375,7 +375,7 @@
       }
 
       function renderGrid() {
-        if (!$("grid") \vert{}\vert{} !$("count")) return;
+        if (!$("grid") || !$("count")) return;
         const list = PRODUCTS.filter(p => cat === "Todo" || p.cat === cat).sort(SORTS[sort][1]);
         $("count").textContent = list.length + (list.length === 1 ? " producto en descuento" : " productos en descuento");
         $("grid").innerHTML = list.length ? list.map(p => `
