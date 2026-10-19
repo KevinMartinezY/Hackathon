@@ -1,13 +1,240 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sportcommerce | Fuerza para tu entrenamiento en casa y en el gym</title>
+  
+  <!-- Tipografía: Oswald para títulos de fuerza y Montserrat para textos/botones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Iconos (FontAwesome) para botones, carrito, redes sociales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- ==============================================
+       1. ESTILOS GLOBALES Y DE EQUIPO (Persona 1 / Capitán)
+       ============================================== -->
+  <link rel="stylesheet" href="css/base.css">
+
+  <!-- 📥 INTEGRACIÓN CSS: TUS COMPAÑEROS DEBEN ENLAZAR AQUÍ SUS ESTILOS -->
+  <!-- Persona 2 (Vitrina y Carrito): Descomenta para producción -->
+  <link rel="stylesheet" href="css/products.css">
+  
+  <!-- Persona 3 (Servicios y Urgencia): Descomenta para producción -->
+  <link rel="stylesheet" href="css/services.css">
+  
+  <!-- Persona 4 (Contacto, Animación y Footer): Descomenta para producción -->
+  <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    
 
-    <script src="app.js"></script>
+  <!-- ==============================================
+       NAVBAR / MENÚ DE NAVEGACIÓN (Persona 1 / Capitán)
+       ============================================== -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="highlight-red">SPORT</span>COMMERCE
+      </a>
+      
+      <!-- Botón menú móvil (P1) -->
+      <button class="mobile-menu-toggle" aria-label="Abrir menú" id="mobileMenuBtn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#hero" class="nav-link active">Inicio</a></li>
+          <li><a href="#productos" class="nav-link">Equipos y Suplementos</a></li>
+          <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botón Carrito con Notificador Dinámico (P1 - Conexión con P2) -->
+      <div class="cart-icon-wrapper" id="cartBtn">
+        <button class="cart-toggle-btn" aria-label="Ver carrito">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       HERO / BIENVENIDA (Persona 1 / Capitán)
+       ============================================== -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge-alert">
+          <i class="fa-solid fa-bolt"></i> EQUIPATE CON LOS MEJORES
+        </div>
+        <h1>EQUIPA TU ENTRENAMIENTO <br><span class="highlight-red">EN CASA O EN EL GYM</span></h1>
+        <p>Encuentra mancuernas, barras olímpicas, equipos de alta resistencia, accesorios de protección y suplementación deportiva premium para llevar tu fuerza al siguiente nivel.</p>
+        
+        <div class="hero-actions">
+          <a href="#productos" class="btn-gym btn-primary">EXPLORAR EQUIPAMIENTO <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#ofertas" class="btn-gym btn-outline">VER OFERTAS</a>
+        </div>
+
+        <div class="hero-features">
+          <div class="feature-item">
+            <i class="fa-solid fa-truck-fast text-red"></i>
+            <span>Envío Rápido a Todo México</span>
+          </div>
+          <div class="feature-item">
+            <i class="fa-solid fa-shield-halved text-amber"></i>
+            <span>Garantía de Calidad Certificada</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Recursos Visuales Hero -->
+      <div class="hero-image-wrapper">
+        <div class="image-gradient-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800" alt="Entrenamiento de fuerza de alto rendimiento en gimnasio" class="hero-img">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================================
+       📥 INTEGRACIÓN HTML: SECCIÓN PRODUCTOS (Persona 2)
+       ============================================== -->
+  <!-- ID fijo para que la Persona 2 inyecte su vitrina de productos y filtros -->
+  <section id="productos" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="title-bold">EQUIPAMIENTO <span class="highlight-red">DESTACADO</span></h2>
+        <p class="subtitle">Filtra por categoría y encuentra lo necesario para reventar tus límites.</p>
+      </div>
+      
+      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 2:
+           Filtros e Inyección dinámica de tarjetas de productos, accesorios y suplementos. -->
+      <div class="products-placeholder">
+        <p>Cargando catálogo de productos, accesorios y suplementación... (Persona 2 inyectará el grid y filtros aquí)</p>
+        <!-- Ej: <div class="filter-buttons"></div> -->
+        <!-- Ej: <div class="products-grid" id="productsGrid"></div> -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================================
+       📥 INTEGRACIÓN HTML: SECCIONES OFERTAS Y SERVICIOS (Persona 3)
+       ============================================== -->
+  <!-- ID fijo para que la Persona 3 inyecte el banner de oferta y contador regresivo -->
+  <section id="ofertas" class="section-padding bg-darker border-y-red">
+    <div class="container">
+      
+      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 3:
+           Banner de urgencia, reloj regresivo (countdown) interactivo y carrusel/lista de testimonios -->
+      <div class="offers-placeholder" style="text-align: center; padding: 40px 20px;">
+        <h2 class="title-bold"><span class="text-amber">OFERTAS DE ENTRENAMIENTO</span> EN CASA -25%</h2>
+        <p class="subtitle">¡No dejes para mañana lo que puedes levantar hoy! Descuentos por tiempo limitado.</p>
+        <div class="countdown-placeholder" style="font-size: 2rem; margin: 20px 0; color: var(--amber);">
+          00d : 02h : 45m : 12s (Persona 3 programará el reloj vivo)
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ID fijo para que la Persona 3 inyecte las tarjetas de servicios (asesoría, mantenimiento, etc.) -->
+  <section id="servicios" class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="title-bold">NUESTROS <span class="highlight-red">SERVICIOS</span></h2>
+        <p class="subtitle">Te acompañamos en tu evolución más allá de los fierros.</p>
+      </div>
+      
+      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 3:
+           Tarjetas de entrenamiento personal, ajuste de equipo, asesoría nutricional, etc. -->
+      <div class="services-placeholder">
+        <p>Cargando servicios interactivos... (Persona 3 inyectará las tarjetas de servicios aquí)</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================================
+       📥 INTEGRACIÓN HTML: SECCIÓN CONTACTO (Persona 4)
+       ============================================== -->
+  <!-- ID fijo para que la Persona 4 inyecte el formulario de contacto con validación -->
+  <section id="contacto" class="section-padding bg-darker">
+    <div class="container">
+      
+      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 4:
+           Formulario interactivo (Nombre, Correo, Mensaje) y pie de pagina de validación/envío -->
+      <div class="contact-placeholder">
+        <h2 class="title-bold">¿NECESITAS <span class="highlight-red">ASESORÍA?</span></h2>
+        <p class="subtitle">¿No sabes qué equipo es el ideal para ti? Escríbenos y un experto te guiará.</p>
+        <p style="opacity: 0.6;">Formulario de contacto y soporte (Persona 4 inyectará el formulario y validación aquí)</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==============================================
+       📥 INTEGRACIÓN HTML: FOOTER / PIE DE PÁGINA (Persona 4)
+       ============================================== -->
+  <!-- ID fijo para que la Persona 4 inyecte el footer con datos, redes, etc. -->
+  <footer id="footer" class="main-footer-section">
+    <!-- 🚧 ÁREA RESERVADA PARA PERSONA 4:
+         Enlaces, logos, redes sociales, derechos e información legal -->
+    <div class="container" style="padding: 40px 0; text-align: center; border-top: 1px solid #333;">
+      <p>&copy; 2026 SPORTCOMMERCE. Todos los derechos reservados. | Diseñado por Equipo Hackathon</p>
+    </div>
+  </footer>
+
+
+  <!-- ==============================================
+       MODAL CARRITO DE COMPRAS (Persona 1 / Conexión Persona 2)
+       ============================================== -->
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer-content">
+      <div class="cart-drawer-header">
+        <h3>Tu Carrito</h3>
+        <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+      </div>
+      
+      <!-- Contenedor inyectado por Persona 2 -->
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- 🚧 ÁREA DINÁMICA DE LA PERSONA 2 (LocalStorage y render de items) -->
+        <p class="empty-cart-msg">Tu carrito está vacío. ¡Empieza a entrenar duro!</p>
+      </div>
+      
+      <div class="cart-drawer-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotalSum">$0.00 MXN</span>
+        </div>
+        <button class="btn-gym btn-primary btn-block" id="checkoutBtn">PROCEDER AL PAGO <i class="fa-solid fa-credit-card"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==============================================
+       SCRIPTS DE EQUIPO (Persona 1 / Capitán)
+       ============================================== -->
+  <script src="js/main.js"></script>
+
+  <!-- 📥 INTEGRACIÓN JAVASCRIPT: COMPAÑEROS INYECTAN SUS SCRIPTS AQUÍ -->
+  <!-- Persona 2 (Vitrina y Carrito LocalStorage) -->
+  <!-- <script src="js/products.js"></script> -->
+  
+  <!-- Persona 3 (Servicios y Reloj Countdown Oferta) -->
+  <!-- <script src="js/offers.js"></script> -->
+  
+  <!-- Persona 4 (Validación de Formulario) -->
+  <!-- <script src="js/form.js"></script> -->
+  
+  <!-- Persona 4 (Animaciones de Scroll) -->
+  <!-- <script src="js/animations.js"></script> -->
 </body>
 </html>
