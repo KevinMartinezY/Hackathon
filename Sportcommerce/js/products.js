@@ -7,7 +7,7 @@ export const productos = [
     precio: 1850,
     publico: "Casa / Gym",
     descripcion: "Recubrimiento de caucho",
-    imagen: "https://placehold.co/600x450?text=Mancuernas"
+    imagen: "./assets/products/mancuernas.jpg"
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const productos = [
     precio: 2490,
     publico: "Ideal Casa",
     descripcion: "Reemplaza 15 pares",
-    imagen: "https://placehold.co/600x450?text=SmartDial"
+    imagen: "./assets/products/mancuerna-ajustable.jpg"
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ export const productos = [
     precio: 3900,
     publico: "Casa / Gym",
     descripcion: "Soporta hasta 680 kg",
-    imagen: "https://placehold.co/600x450?text=Barra+Olimpica"
+    imagen: "./assets/products/barra-olimpica.jpg"
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ export const productos = [
     precio: 4200,
     publico: "Ideal Casa",
     descripcion: "Absorción de impacto",
-    imagen: "https://placehold.co/600x450?text=Discos+Bumper"
+    imagen: "./assets/products/discos-bumper.jpg"
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ export const productos = [
     precio: 3150,
     publico: "Ideal Casa",
     descripcion: "7 ángulos de respaldo",
-    imagen: "https://placehold.co/600x450?text=Banco+FID"
+    imagen: "./assets/products/banco-fid.jpg"
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ export const productos = [
     precio: 5800,
     publico: "Ideal Casa",
     descripcion: "Ahorra espacio, solo 15 cm",
-    imagen: "https://placehold.co/600x450?text=Half+Rack"
+    imagen: "./assets/products/half-rack.jpg"
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ export const productos = [
     precio: 980,
     publico: "Uso Gym",
     descripcion: "Hebilla de palanca",
-    imagen: "https://placehold.co/600x450?text=Cinturon"
+    imagen: "./assets/products/cinturon.jpg"
   },
   {
     id: 8,
@@ -70,7 +70,7 @@ export const productos = [
     precio: 650,
     publico: "Uso Gym",
     descripcion: "Agarre antideslizante",
-    imagen: "https://placehold.co/600x450?text=Gym+Bag"
+    imagen: "./assets/products/kit-gym.jpg"
   }
 ];
 
