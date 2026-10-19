@@ -45,7 +45,7 @@
   }
 
   function renderGrid() {
-    if (!$("grid") \vert{}\vert{} !$("count")) return;
+    if (!$("grid") || !$("count")) return;
     const list = PRODUCTS.filter(p => cat === "Todo" || p.cat === cat).sort(SORTS[sort][1]);
     $("count").textContent = list.length + (list.length === 1 ? " producto en descuento" : " productos en descuento");
     $("grid").innerHTML = list.length ? list.map(p => `
@@ -86,8 +86,8 @@
       Math.floor(t % 60)
     ];
     ["d", "h", "m", "s"].forEach((id, i) => {
-      const el = $(id);
-      if (el) el.textContent = String(v[i]).padStart(2, "0");
+      const el = document.getElementById(id);
+      if (el) {el.textContent = String(v[i]).padStart(2, "0");}
     });
   }
 
