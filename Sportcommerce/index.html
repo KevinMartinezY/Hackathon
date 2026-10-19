@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sportcommerce | Fuerza para tu entrenamiento en casa y en el gym</title>
   
-  <!-- Tipografía: Oswald para títulos de fuerza y Montserrat para textos/botones -->
+  <!-- Tipografía -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -13,12 +13,10 @@
   <!-- Iconos (FontAwesome) para botones, carrito, redes sociales -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- ==============================================
-       1. ESTILOS GLOBALES Y DE EQUIPO (Persona 1 / Capitán)
-       ============================================== -->
+       1. ESTILOS GLOBALES Y DE EQUIPO 
   <link rel="stylesheet" href="css/base.css">
 
-  <!-- 📥 INTEGRACIÓN CSS: TUS COMPAÑEROS DEBEN ENLAZAR AQUÍ SUS ESTILOS -->
+  <!--  INTEGRACIÓN CSS -->
   <!-- Persona 2 (Vitrina y Carrito): Descomenta para producción -->
   <link rel="stylesheet" href="css/products.css">
   
@@ -30,16 +28,14 @@
 </head>
 <body>
 
-  <!-- ==============================================
-       NAVBAR / MENÚ DE NAVEGACIÓN (Persona 1 / Capitán)
-       ============================================== -->
+  <!-- NAVBAR / MENÚ DE NAVEGACIÓN -->
   <header class="main-header">
     <div class="container nav-container">
       <a href="#" class="logo">
         <span class="highlight-red">SPORT</span>COMMERCE
       </a>
       
-      <!-- Botón menú móvil (P1) -->
+      <!-- Botón menú móvil -->
       <button class="mobile-menu-toggle" aria-label="Abrir menú" id="mobileMenuBtn">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -64,9 +60,7 @@
     </div>
   </header>
 
-  <!-- ==============================================
-       HERO / BIENVENIDA (Persona 1 / Capitán)
-       ============================================== -->
+  <!-- HERO / BIENVENIDA -->
   <section id="hero" class="hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
@@ -102,9 +96,7 @@
   </section>
 
 
-  <!-- ==============================================
-       📥 INTEGRACIÓN HTML: SECCIÓN PRODUCTOS (Persona 2)
-       ============================================== -->
+  <!-- INTEGRACIÓN HTML: SECCIÓN PRODUCTOS (Persona 2) -->
   <!-- ID fijo para que la Persona 2 inyecte su vitrina de productos y filtros -->
   <section id="productos" class="section-padding">
     <div class="container">
@@ -124,9 +116,7 @@
   </section>
 
 
-  <!-- ==============================================
-       📥 INTEGRACIÓN HTML: SECCIONES OFERTAS Y SERVICIOS (Persona 3)
-       ============================================== -->
+  <!-- INTEGRACIÓN HTML: SECCIONES OFERTAS Y SERVICIOS (Persona 3) -->
   <!-- ID fijo para que la Persona 3 inyecte el banner de oferta y contador regresivo -->
   <section id="ofertas" class="section-padding bg-darker border-y-red">
     <div class="container">
@@ -160,9 +150,7 @@
   </section>
 
 
-  <!-- ==============================================
-       📥 INTEGRACIÓN HTML: SECCIÓN CONTACTO (Persona 4)
-       ============================================== -->
+  <!-- INTEGRACIÓN HTML: SECCIÓN CONTACTO (Persona 4) -->
   <!-- ID fijo para que la Persona 4 inyecte el formulario de contacto con validación -->
   <section id="contacto" class="section-padding bg-darker">
     <div class="container">
@@ -178,9 +166,7 @@
   </section>
 
 
-  <!-- ==============================================
-       📥 INTEGRACIÓN HTML: FOOTER / PIE DE PÁGINA (Persona 4)
-       ============================================== -->
+  <!-- INTEGRACIÓN HTML: FOOTER / PIE DE PÁGINA (Persona 4) -->
   <!-- ID fijo para que la Persona 4 inyecte el footer con datos, redes, etc. -->
   <footer id="footer" class="main-footer-section">
     <!-- 🚧 ÁREA RESERVADA PARA PERSONA 4:
@@ -191,9 +177,7 @@
   </footer>
 
 
-  <!-- ==============================================
-       MODAL CARRITO DE COMPRAS (Persona 1 / Conexión Persona 2)
-       ============================================== -->
+  <!--  MODAL CARRITO DE COMPRAS (Persona 1 / Conexión Persona 2) -->
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-drawer-overlay" id="cartOverlay"></div>
     <div class="cart-drawer-content">
@@ -219,9 +203,7 @@
   </div>
 
 
-  <!-- ==============================================
-       SCRIPTS DE EQUIPO (Persona 1 / Capitán)
-       ============================================== -->
+  <!-- SCRIPTS DE EQUIPO (Persona 1 / Capitán) -->
   <script src="js/main.js"></script>
 
   <!-- 📥 INTEGRACIÓN JAVASCRIPT: COMPAÑEROS INYECTAN SUS SCRIPTS AQUÍ -->
