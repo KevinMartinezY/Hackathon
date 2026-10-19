@@ -1,0 +1,165 @@
+/* ===== SportCommerce · Servicios =====
+   Se carga DESPUÉS de Bootstrap para sobrescribir sus variables. */
+:root{
+  --sc-dark:#0B0F19; --sc-card:#141A29; --sc-red:#FF2A5F;
+  --sc-muted:#A0AAB8; --sc-border:#232D42; --sc-white:#F4F6FA;
+  --sc-display:'Oswald','Arial Narrow',Impact,sans-serif;
+
+  --bs-body-bg:var(--sc-dark);
+  --bs-body-color:var(--sc-white);
+  --bs-body-font-family:'Montserrat',system-ui,sans-serif;
+  --bs-border-color:var(--sc-border);
+  --bs-link-color-rgb:244,246,250;
+  --bs-link-hover-color-rgb:255,42,95;
+}
+a{text-decoration:none}
+:focus-visible{outline:2px solid var(--sc-red)!important;outline-offset:3px}
+.sc-muted{color:var(--sc-muted)}
+
+/* ---- Navbar ---- */
+.sc-nav{
+  background:var(--sc-dark);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  min-height:72px;
+}
+.sc-logo{
+  font-family:var(--sc-display);font-weight:700;font-size:2rem;
+  letter-spacing:.06em;line-height:1;margin-right:0;
+  color:var(--sc-red);
+}
+.sc-logo:hover{color:var(--sc-red)}
+.sc-logo span{color:var(--sc-white)}
+.sc-nav .nav-link{
+  color:var(--sc-muted);font-weight:400;font-size:.95rem;
+  padding:.4rem 0 .45rem!important;margin:0 1.1rem;
+  border-bottom:2px solid transparent;
+}
+.sc-nav .nav-link:hover{color:var(--sc-white)}
+.sc-nav .nav-link.active{color:var(--sc-white);border-bottom-color:var(--sc-red)}
+.sc-cart{position:relative;display:inline-block;padding:6px}
+.sc-cart svg{width:30px;height:30px;fill:var(--sc-white);display:block}
+.sc-cart b{
+  position:absolute;top:-2px;right:-6px;min-width:19px;height:19px;border-radius:10px;
+  background:#F59E0B;color:var(--sc-dark);font-size:.7rem;font-weight:700;line-height:1;
+  display:grid;place-items:center;padding:0 5px;
+}
+@media (max-width:991.98px){
+  .sc-nav .nav-link{margin:0;padding:.8rem 0!important;border-bottom:1px solid var(--sc-border)}
+  .sc-nav .nav-link.active{border-bottom-color:var(--sc-red)}
+}
+
+/* ---- Hero ---- */
+.sc-hero{border-bottom:1px solid var(--sc-border);overflow:hidden}
+.sc-title{
+  font-family:var(--sc-display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(56px,15vw,210px);line-height:.88;margin:22px 0 0;
+  display:flex;align-items:flex-start;gap:.08em;
+}
+.sc-title sup{font-size:.14em;color:var(--sc-red);margin-top:.5em}
+.sc-lead{color:var(--sc-muted);font-size:1.1rem;max-width:46ch}
+
+/* Bloque de horario (equivale al contador de Ofertas) */
+.sc-hours-label{
+  display:block;margin-bottom:10px;font-family:var(--sc-display);font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;font-size:.95rem;
+}
+.sc-hours{display:flex;flex-wrap:wrap;gap:2px;background:var(--sc-red);padding:2px}
+.sc-hours > div{background:var(--sc-dark);padding:12px 18px;flex:1 1 130px}
+.sc-hours strong{display:block;font-family:var(--sc-display);font-size:1.3rem;line-height:1.2}
+.sc-hours span{color:var(--sc-muted);font-size:.85rem}
+.sc-hours .sc-cta{flex:1 1 100%}
+
+/* ---- Botones ---- */
+.sc-cta,.sc-ghost{
+  border:0;border-radius:0;font-family:var(--sc-display);font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;padding:14px 22px;font-size:1rem;cursor:pointer;
+}
+.sc-cta{background:var(--sc-white);color:var(--sc-dark)}
+.sc-cta:hover{background:var(--sc-red);color:#fff}
+.sc-ghost{background:none;color:var(--sc-white);border:1px solid var(--sc-border)}
+.sc-ghost:hover{border-color:var(--sc-white)}
+
+/* ---- Pestañas ---- */
+.sc-tabs{border-bottom:1px solid var(--sc-border);margin-top:36px;gap:40px;overflow-x:auto;scrollbar-width:none}
+.sc-tabs::-webkit-scrollbar{display:none}
+.sc-tabs button{
+  background:none;border:0;border-bottom:4px solid transparent;margin-bottom:-1px;
+  padding:14px 0;white-space:nowrap;color:var(--sc-muted);font-weight:500;
+}
+.sc-tabs button:hover{color:var(--sc-white)}
+.sc-tabs button[aria-selected="true"]{color:var(--sc-white);font-weight:600;border-bottom-color:var(--sc-red)}
+
+/* ---- Ordenar ---- */
+.sc-sort{
+  border:1px solid var(--sc-white);border-radius:0;color:var(--sc-white);
+  font-family:var(--sc-display);font-weight:600;font-size:1.05rem;letter-spacing:.05em;
+  text-transform:uppercase;padding:10px 20px;
+}
+.sc-sort:hover,.sc-sort:focus,.sc-sort.show{background:var(--sc-white)!important;color:var(--sc-dark)!important;border-color:var(--sc-white)!important}
+.sc-menu{background:var(--sc-card);border:1px solid var(--sc-border);border-radius:0;min-width:230px;padding:0}
+.sc-menu .dropdown-item{color:var(--sc-muted);font-size:.9rem;padding:12px 18px}
+.sc-menu .dropdown-item:hover{background:var(--sc-dark);color:var(--sc-white)}
+.sc-menu .dropdown-item.active{background:var(--sc-dark);color:var(--sc-white);box-shadow:inset 3px 0 var(--sc-red)}
+
+/* ---- Tarjetas de servicio ---- */
+.sc-tile{position:relative;aspect-ratio:16/10;background:var(--sc-card);overflow:hidden;display:flex;align-items:center;justify-content:center}
+.sc-tile img{width:100%;height:100%;object-fit:cover}
+.sc-big{
+  font-family:var(--sc-display);font-weight:700;font-size:clamp(56px,8vw,112px);line-height:1;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:2px var(--sc-border);transition:-webkit-text-stroke-color .2s;
+}
+.sc-item:hover .sc-big{-webkit-text-stroke-color:var(--sc-red)}
+.sc-badge{position:absolute;left:0;top:0;background:var(--sc-red);color:#fff;font-family:var(--sc-display);font-weight:600;font-size:1.1rem;padding:6px 14px}
+.sc-add{
+  position:absolute;right:0;bottom:0;border:0;border-radius:0;background:var(--sc-white);color:var(--sc-dark);
+  font-family:var(--sc-display);font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:12px 20px;font-size:.95rem;
+}
+.sc-add:hover{background:var(--sc-red);color:#fff}
+.sc-info{padding:14px 4px 0}
+.sc-now{font-weight:600;font-size:1.1rem}
+.sc-from{color:var(--sc-muted);font-weight:400;font-size:.85rem;margin-right:4px}
+.sc-was{color:var(--sc-muted);text-decoration:line-through;font-size:.88rem;margin-left:12px}
+.sc-name{margin-top:6px;font-weight:500}
+.sc-desc{color:var(--sc-muted);font-size:.88rem;margin-top:4px;max-width:52ch}
+.sc-cat{color:var(--sc-muted);font-size:.88rem;margin-top:8px}
+.sc-empty{padding:60px 0;color:var(--sc-muted)}
+@media (max-width:575.98px){.sc-add{padding:10px 14px;font-size:.8rem}}
+
+/* ---- Secciones ---- */
+.sc-section{border-top:1px solid var(--sc-border);padding-top:48px;margin-top:8px}
+.sc-h2{font-family:var(--sc-display);font-weight:700;text-transform:uppercase;font-size:clamp(32px,5vw,56px);line-height:1;margin:0 0 28px}
+
+/* Pasos */
+.sc-steps{border-top:1px solid var(--sc-border);border-left:1px solid var(--sc-border)}
+.sc-step{height:100%;padding:24px 22px 28px;border-right:1px solid var(--sc-border);border-bottom:1px solid var(--sc-border)}
+.sc-step-n{
+  display:block;font-family:var(--sc-display);font-weight:700;font-size:4rem;line-height:1;
+  color:transparent;-webkit-text-stroke:2px var(--sc-red);margin-bottom:14px;
+}
+.sc-step h3{font-size:1.05rem;font-weight:600;margin:0 0 6px}
+.sc-step p{color:var(--sc-muted);font-size:.9rem;margin:0}
+
+/* FAQ */
+.sc-faq{--bs-accordion-bg:transparent;--bs-accordion-border-color:var(--sc-border);--bs-accordion-border-radius:0;--bs-accordion-inner-border-radius:0;
+  --bs-accordion-btn-bg:transparent;--bs-accordion-active-bg:transparent;--bs-accordion-active-color:var(--sc-white);--bs-accordion-btn-color:var(--sc-white);
+  --bs-accordion-btn-focus-box-shadow:none}
+.sc-faq .accordion-item{border-left:0;border-right:0;background:transparent}
+.sc-faq .accordion-button{font-weight:500;padding:20px 0;box-shadow:none}
+.sc-faq .accordion-button:not(.collapsed){font-weight:600;box-shadow:inset 3px 0 var(--sc-red);padding-left:16px}
+.sc-faq .accordion-body{color:var(--sc-muted);padding:0 0 22px}
+
+/* ---- Modal / formulario ---- */
+.sc-modal{background:var(--sc-card);border:1px solid var(--sc-border);border-radius:0}
+.sc-modal .modal-header,.sc-modal .modal-footer{border-color:var(--sc-border)}
+.sc-modal .modal-title{font-family:var(--sc-display);font-weight:700;text-transform:uppercase;font-size:1.8rem}
+.sc-modal .form-label{font-size:.88rem;color:var(--sc-muted)}
+.sc-modal .form-control,.sc-modal .form-select{background-color:var(--sc-dark);border:1px solid var(--sc-border);border-radius:0;color:var(--sc-white);padding:.7rem .85rem}
+.sc-modal .form-control:focus,.sc-modal .form-select:focus{border-color:var(--sc-red);box-shadow:none}
+.sc-modal .form-control::placeholder{color:#6b7587}
+
+/* ---- Footer / toast ---- */
+.sc-footer{border-top:1px solid var(--sc-border);padding:32px 0;color:var(--sc-muted);font-size:.9rem}
+.sc-toast{background:var(--sc-white);color:var(--sc-dark);border:0;border-radius:0;font-weight:600}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
