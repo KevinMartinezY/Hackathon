@@ -223,17 +223,64 @@
   <!-- SECCIÓN CONTACTO (Persona 4: inyectada por form.js) -->
   <section id="contacto" class="section-padding bg-darker"></section>
 
-  <!-- FOOTER (Persona 4) -->
-  <footer id="footer" class="main-footer-section bg-darker">
-    <div class="container" style="padding: 40px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-      <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 16px;">
-        <a href="#" class="social-icon border border-secondary text-light" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" class="social-icon border border-secondary text-light" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" class="social-icon border border-secondary text-light" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+  <footer class="bg-dark text-light pt-5 pb-3 border-top border-secondary">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Columna 1: Marca y Propuesta de Valor -->
+          <div class="col-12 col-md-4">
+            <h5 class="text-uppercase fw-bold text-warning mb-3">
+                <a href="#hero" class="logo">
+        <span class="highlight-red">SPORT</span>COMMERCE
+      </a>
+            </h5>
+            <p class="small text-light">
+              Equipamiento fitness de alto rendimiento para atletas y gimnasios en casa. Eleva tu entrenamiento al siguiente nivel.
+            </p>
+          </div>
+
+          <!-- Columna 2: Accesos Rápidos -->
+          <div class="col-6 col-md-4">
+            <h6 class="text-uppercase fw-bold mb-3 text-light">Navegación</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-2"><a href="#hero" class="text-decoration-none hover-orange">Inicio</a></li>
+              <li class="mb-2"><a href="#productos" class="text-decoration-none hover-orange">Catálogo</a></li>
+              <li class="mb-2"><a href="#servicios" class="text-decoration-none hover-orange">Servicios</a></li>
+              <li class="mb-2"><a id="#contacto" href="#contacto" class="text-decoration-none hover-orange">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Columna 3: Redes Sociales -->
+          <div class="col-6 col-md-4">
+            <h6 class="text-uppercase fw-bold mb-3 text-light">Síguenos</h6>
+            <div class="d-flex gap-3">
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle social-icon" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle social-icon" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="btn btn-outline-light btn-sm rounded-circle social-icon" aria-label="YouTube">
+                <i class="bi bi-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4 border-secondary">
+
+        <!-- Línea de Copyright y Enlaces Legales -->
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start small">
+            &copy; 2026 Iron Forge Fit. Todos los derechos reservados.
+          </div>
+          <div class="col-md-6 text-center text-md-end small">
+            <a href="#" class="text-decoration-none me-3">Privacidad</a>
+            <a href="#" class="text-decoration-none">Términos</a>
+          </div>
+        </div>
       </div>
-      <p class="text-muted mb-0">&copy; 2026 <strong class="text-light">SPORTCOMMERCE</strong>. Todos los derechos reservados. | Desarrollado en Hackathon</p>
-    </div>
-  </footer>
+    </footer>
+
 
   <!-- MODAL LATERAL DEL CARRITO (Conectado entre main.js y cart.js) -->
   <div class="cart-drawer" id="cartDrawer">
