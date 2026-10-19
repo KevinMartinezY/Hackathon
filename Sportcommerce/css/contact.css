@@ -1,0 +1,55 @@
+/* ESTILOS: CONTACTO, FOOTER Y ANIMACIONES */
+
+:root {
+  --bg-carbon: #0F172A;
+  --accent-orange: #EA580C;
+}
+
+/* Botón y acentos de color */
+.bg-orange-custom {
+  background-color: var(--accent-orange) !important;
+  border-color: var(--accent-orange) !important;
+  color: #FFFFFF !important;
+  transition: all 0.3s ease-in-out;
+}
+
+.bg-orange-custom:hover {
+  background-color: #c24605 !important;
+  border-color: #c24605 !important;
+  transform: translateY(-2px);
+}
+
+.hover-orange:hover {
+  color: var(--accent-orange) !important;
+  transition: color 0.3s ease;
+}
+
+/* Iconos Sociales en Footer */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: var(--accent-orange);
+  border-color: var(--accent-orange);
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
+}
+
+/* Clases de Animación (Scroll Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}

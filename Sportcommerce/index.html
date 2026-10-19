@@ -1,41 +1,73 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sportcommerce | Fuerza para tu entrenamiento en casa y en el gym</title>
   
-  <!-- Tipografía -->
+  <!-- Tipografía: Oswald y Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Iconos (FontAwesome) para botones, carrito, redes sociales -->
+  <!-- Iconos (FontAwesome) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-       1. ESTILOS GLOBALES Y DE EQUIPO 
-  <link rel="stylesheet" href="css/base.css">
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!--  INTEGRACIÓN CSS -->
-  <!-- Persona 2 (Vitrina y Carrito): Descomenta para producción -->
+  <!-- 1. ESTILOS GLOBALES (Persona 1) -->
+  <link rel="stylesheet" href="css/base.css">   
+
+  <!-- 2. INTEGRACIÓN CSS DEL EQUIPO -->
   <link rel="stylesheet" href="css/products.css">
-  
-  <!-- Persona 3 (Servicios y Urgencia): Descomenta para producción -->
-  <link rel="stylesheet" href="css/services.css">
-  
-  <!-- Persona 4 (Contacto, Animación y Footer): Descomenta para producción -->
+  <link rel="stylesheet" href="css/Ofertas.css">
   <link rel="stylesheet" href="css/contact.css">
+
+  <!-- ARMONIZACIÓN VISUAL ENTRE MÓDULOS -->
+  <style>
+    a { text-decoration: none; }
+    .nav-links ul { margin-bottom: 0; padding-left: 0; }
+    .hero-actions .btn-gym { width: auto; }
+    .hero-actions .btn-primary { background-color: var(--red-adrenalina); }
+    .hero-actions .btn-primary:hover { background-color: var(--red-hover); }
+    .hero-actions .btn-outline { background-color: transparent; border: 2px solid var(--text-light); }
+    .hero-actions .btn-outline:hover { background-color: var(--text-light); color: var(--bg-dark); }
+    
+    /* Adaptación de la sección Productos al tema oscuro Heavy Iron Power */
+    #productos { background: var(--bg-dark); color: var(--text-light); }
+    #productos .card-item { background: #141A29; border: 1px solid #232D42; color: var(--text-light); }
+    #productos .card-content h3 { color: var(--text-light); }
+    #productos .product-price { color: var(--amber); }
+    #productos .filter-btn { background: #141A29; color: var(--text-light); border-color: #232D42; }
+    #productos .filter-btn:hover, #productos .filter-btn.active { background: var(--red-adrenalina); border-color: var(--red-adrenalina); color: #fff; }
+    #productos .btn-gym { background: var(--red-adrenalina); }
+    #productos .btn-gym:hover { background: var(--red-hover); }
+
+    /* Ajuste del botón del carrito en el Navbar */
+    #cart-toggle.cart-toggle-btn {
+      position: relative;
+      top: auto;
+      right: auto;
+      background: transparent;
+      padding: 8px;
+    }
+    .cart-item-info h3 { color: var(--text-light); margin-bottom: 4px; }
+    .cart-item-info p { color: var(--amber); font-weight: 700; margin-bottom: 8px; }
+    .cart-quantity span { color: var(--text-light); font-weight: 600; }
+    .cart-quantity button { color: #0f172a; font-weight: 700; }
+    .cart-empty { color: var(--text-muted); text-align: center; margin-top: 40px; }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR / MENÚ DE NAVEGACIÓN -->
+  <!-- NAVBAR / MENÚ DE NAVEGACIÓN (Persona 1) -->
   <header class="main-header">
     <div class="container nav-container">
-      <a href="#" class="logo">
+      <a href="#hero" class="logo">
         <span class="highlight-red">SPORT</span>COMMERCE
       </a>
       
-      <!-- Botón menú móvil -->
       <button class="mobile-menu-toggle" aria-label="Abrir menú" id="mobileMenuBtn">
         <i class="fa-solid fa-bars"></i>
       </button>
@@ -47,25 +79,26 @@
           <li><a href="#ofertas" class="nav-link">Ofertas</a></li>
           <li><a href="#servicios" class="nav-link">Servicios</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
+          <li><a href="Login.html" class="nav-link"><i class="fa-regular fa-user"></i> Login</a></li>
         </ul>
       </nav>
 
-      <!-- Botón Carrito con Notificador Dinámico (P1 - Conexión con P2) -->
+      <!-- Botón Carrito -->
       <div class="cart-icon-wrapper" id="cartBtn">
-        <button class="cart-toggle-btn" aria-label="Ver carrito">
+        <button class="cart-toggle-btn" id="cart-toggle" aria-label="Ver carrito">
           <i class="fa-solid fa-cart-shopping"></i>
-          <span class="cart-badge" id="cartBadge">0</span>
+          <span class="cart-badge" id="cart-count">0</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO / BIENVENIDA -->
+  <!-- HERO / BIENVENIDA (Persona 1) -->
   <section id="hero" class="hero-section">
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="badge-alert">
-          <i class="fa-solid fa-bolt"></i> EQUIPATE CON LOS MEJORES
+          <i class="fa-solid fa-bolt"></i> EQUÍPATE CON LOS MEJORES
         </div>
         <h1>EQUIPA TU ENTRENAMIENTO <br><span class="highlight-red">EN CASA O EN EL GYM</span></h1>
         <p>Encuentra mancuernas, barras olímpicas, equipos de alta resistencia, accesorios de protección y suplementación deportiva premium para llevar tu fuerza al siguiente nivel.</p>
@@ -87,136 +120,285 @@
         </div>
       </div>
       
-      <!-- Recursos Visuales Hero -->
       <div class="hero-image-wrapper">
         <div class="image-gradient-overlay"></div>
-        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800" alt="Entrenamiento de fuerza de alto rendimiento en gimnasio" class="hero-img">
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=800" alt="Entrenamiento de fuerza" class="hero-img">
       </div>
     </div>
   </section>
 
-
-  <!-- INTEGRACIÓN HTML: SECCIÓN PRODUCTOS (Persona 2) -->
-  <!-- ID fijo para que la Persona 2 inyecte su vitrina de productos y filtros -->
+  <!-- SECCIÓN PRODUCTOS (Persona 2: products.js + products.css) -->
   <section id="productos" class="section-padding">
     <div class="container">
       <div class="section-header">
         <h2 class="title-bold">EQUIPAMIENTO <span class="highlight-red">DESTACADO</span></h2>
-        <p class="subtitle">Filtra por categoría y encuentra lo necesario para reventar tus límites.</p>
+        <p class="subtitle">Filtra por categoría y encuentra lo necesario para superar tus límites.</p>
       </div>
       
-      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 2:
-           Filtros e Inyección dinámica de tarjetas de productos, accesorios y suplementos. -->
-      <div class="products-placeholder">
-        <p>Cargando catálogo de productos, accesorios y suplementación... (Persona 2 inyectará el grid y filtros aquí)</p>
-        <!-- Ej: <div class="filter-buttons"></div> -->
-        <!-- Ej: <div class="products-grid" id="productsGrid"></div> -->
-      </div>
+      <div id="filtros-productos" aria-label="Filtros de categoría"></div>
+      <div id="lista-productos" aria-live="polite"></div>
     </div>
   </section>
 
-
-  <!-- INTEGRACIÓN HTML: SECCIONES OFERTAS Y SERVICIOS (Persona 3) -->
-  <!-- ID fijo para que la Persona 3 inyecte el banner de oferta y contador regresivo -->
+  <!-- SECCIÓN OFERTAS Y TEMPORIZADOR (Persona 3: Ofertas.js + Ofertas.css) -->
   <section id="ofertas" class="section-padding bg-darker border-y-red">
+    <div class="container-xl">
+      <div class="sc-hero pb-4 mb-4">
+        <div class="row align-items-end gy-4">
+          <div class="col-lg-7">
+            <span class="badge-alert mb-2"><i class="fa-solid fa-fire"></i> DESCUENTOS RELÁMPAGO (<span id="total">0</span> PRODUCTOS)</span>
+            <h2 class="title-bold mb-2"><span class="text-amber">OFERTAS DE ENTRENAMIENTO</span> HASTA -50%</h2>
+            <p class="sc-lead mb-0">Mancuernas, barras, protección y suplementos en liquidación por tiempo limitado.</p>
+          </div>
+          <div class="col-lg-5 d-lg-flex justify-content-lg-end">
+            <div>
+              <span class="sc-timer-label text-amber">LA OFERTA TERMINA EN:</span>
+              <div class="sc-timer" role="timer">
+                <div><strong id="d">00</strong><small>días</small></div>
+                <div><strong id="h">00</strong><small>horas</small></div>
+                <div><strong id="m">00</strong><small>min</small></div>
+                <div><strong id="s">00</strong><small>seg</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pestañas, Ordenamiento y Grid de Ofertas.js -->
+      <ul class="nav sc-tabs flex-nowrap" id="tabs" role="tablist" aria-label="Categorías de ofertas"></ul>
+
+      <div class="d-flex justify-content-between align-items-center py-3">
+        <span class="sc-muted small" id="count" aria-live="polite"></span>
+        <div class="dropdown">
+          <button class="btn sc-sort dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Ordenar</button>
+          <ul class="dropdown-menu dropdown-menu-end sc-menu" id="sortMenu"></ul>
+        </div>
+      </div>
+
+      <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3 pb-2" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN SERVICIOS (Persona 3) -->
+  <section id="servicios" class="section-padding">
     <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="title-bold">NUESTROS <span class="highlight-red">SERVICIOS</span></h2>
+        <p class="subtitle">Te acompañamos en tu evolución más allá de los fierros.</p>
+      </div>
       
-      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 3:
-           Banner de urgencia, reloj regresivo (countdown) interactivo y carrusel/lista de testimonios -->
-      <div class="offers-placeholder" style="text-align: center; padding: 40px 20px;">
-        <h2 class="title-bold"><span class="text-amber">OFERTAS DE ENTRENAMIENTO</span> EN CASA -25%</h2>
-        <p class="subtitle">¡No dejes para mañana lo que puedes levantar hoy! Descuentos por tiempo limitado.</p>
-        <div class="countdown-placeholder" style="font-size: 2rem; margin: 20px 0; color: var(--amber);">
-          00d : 02h : 45m : 12s (Persona 3 programará el reloj vivo)
+      <div id="services-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card h-100 bg-dark text-light border-secondary p-4 text-center">
+            <i class="fa-solid fa-truck-ramp-box fs-1 text-danger mb-3"></i>
+            <h4 class="h5">Asesoría de Equipamiento</h4>
+            <p class="small text-muted mb-0">Diseñamos la distribución e instalación ideal de tu Home Gym o Gimnasio Comercial.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-dark text-light border-secondary p-4 text-center">
+            <i class="fa-solid fa-screwdriver-wrench fs-1 text-warning mb-3"></i>
+            <h4 class="h5">Mantenimiento Preventivo</h4>
+            <p class="small text-muted mb-0">Servicio técnico y ajuste para poleas, caminadoras y barras olímpicas.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-dark text-light border-secondary p-4 text-center">
+            <i class="fa-solid fa-dumbbell fs-1 text-danger mb-3"></i>
+            <h4 class="h5">Garantía Extendida</h4>
+            <p class="small text-muted mb-0">Protección contra desgaste estructural en discos, mancuernas y agarres.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 bg-dark text-light border-secondary p-4 text-center">
+            <i class="fa-solid fa-user-ninja fs-1 text-warning mb-3"></i>
+            <h4 class="h5">Rutinas Personalizadas</h4>
+            <p class="small text-muted mb-0">Planes de entrenamiento orientados al uso de tu kit o equipamiento adquirido.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ID fijo para que la Persona 3 inyecte las tarjetas de servicios (asesoría, mantenimiento, etc.) -->
-  <section id="servicios" class="section-padding">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="title-bold">NUESTROS <span class="highlight-red">SERVICIOS</span></h2>
-        <p class="subtitle">Te acompañamos en tu evolución más allá de los fierros.</p>
+  <!-- SECCIÓN CONTACTO (Persona 4: inyectada por form.js) -->
+  <section id="contacto" class="section-padding bg-darker"></section>
+
+  <!-- FOOTER (Persona 4) -->
+  <footer id="footer" class="main-footer-section bg-darker">
+    <div class="container" style="padding: 40px 24px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 16px;">
+        <a href="#" class="social-icon border border-secondary text-light" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="social-icon border border-secondary text-light" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" class="social-icon border border-secondary text-light" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
       </div>
-      
-      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 3:
-           Tarjetas de entrenamiento personal, ajuste de equipo, asesoría nutricional, etc. -->
-      <div class="services-placeholder">
-        <p>Cargando servicios interactivos... (Persona 3 inyectará las tarjetas de servicios aquí)</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- INTEGRACIÓN HTML: SECCIÓN CONTACTO (Persona 4) -->
-  <!-- ID fijo para que la Persona 4 inyecte el formulario de contacto con validación -->
-  <section id="contacto" class="section-padding bg-darker">
-    <div class="container">
-      
-      <!-- 🚧 ÁREA RESERVADA PARA PERSONA 4:
-           Formulario interactivo (Nombre, Correo, Mensaje) y pie de pagina de validación/envío -->
-      <div class="contact-placeholder">
-        <h2 class="title-bold">¿NECESITAS <span class="highlight-red">ASESORÍA?</span></h2>
-        <p class="subtitle">¿No sabes qué equipo es el ideal para ti? Escríbenos y un experto te guiará.</p>
-        <p style="opacity: 0.6;">Formulario de contacto y soporte (Persona 4 inyectará el formulario y validación aquí)</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- INTEGRACIÓN HTML: FOOTER / PIE DE PÁGINA (Persona 4) -->
-  <!-- ID fijo para que la Persona 4 inyecte el footer con datos, redes, etc. -->
-  <footer id="footer" class="main-footer-section">
-    <!-- 🚧 ÁREA RESERVADA PARA PERSONA 4:
-         Enlaces, logos, redes sociales, derechos e información legal -->
-    <div class="container" style="padding: 40px 0; text-align: center; border-top: 1px solid #333;">
-      <p>&copy; 2026 SPORTCOMMERCE. Todos los derechos reservados. | Diseñado por Equipo Hackathon</p>
+      <p class="text-muted mb-0">&copy; 2026 <strong class="text-light">SPORTCOMMERCE</strong>. Todos los derechos reservados. | Desarrollado en Hackathon</p>
     </div>
   </footer>
 
-
-  <!--  MODAL CARRITO DE COMPRAS (Persona 1 / Conexión Persona 2) -->
+  <!-- MODAL LATERAL DEL CARRITO (Conectado entre main.js y cart.js) -->
   <div class="cart-drawer" id="cartDrawer">
     <div class="cart-drawer-overlay" id="cartOverlay"></div>
     <div class="cart-drawer-content">
       <div class="cart-drawer-header">
         <h3>Tu Carrito</h3>
-        <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+        <button class="close-cart-btn" id="closeCartBtn" aria-label="Cerrar carrito">&times;</button>
       </div>
       
-      <!-- Contenedor inyectado por Persona 2 -->
-      <div class="cart-items-container" id="cartItemsContainer">
-        <!-- 🚧 ÁREA DINÁMICA DE LA PERSONA 2 (LocalStorage y render de items) -->
-        <p class="empty-cart-msg">Tu carrito está vacío. ¡Empieza a entrenar duro!</p>
+      <div class="cart-items-container" id="cart-items">
+        <p class="cart-empty">Tu carrito está vacío.</p>
       </div>
       
       <div class="cart-drawer-footer">
         <div class="cart-total">
           <span>Total:</span>
-          <span id="cartTotalSum">$0.00 MXN</span>
+          <span id="cart-total">$0.00</span>
         </div>
-        <button class="btn-gym btn-primary btn-block" id="checkoutBtn">PROCEDER AL PAGO <i class="fa-solid fa-credit-card"></i></button>
+        <button class="btn-gym btn-primary btn-block" id="checkoutBtn">
+          PROCEDER AL PAGO <i class="fa-solid fa-credit-card"></i>
+        </button>
       </div>
     </div>
   </div>
 
+  <!-- TOAST DE NOTIFICACIONES -->
+  <div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="toast" class="toast sc-toast" role="status" aria-live="polite" aria-atomic="true" data-bs-delay="2200">
+      <div class="toast-body" id="toastMsg"></div>
+    </div>
+  </div>
 
-  <!-- SCRIPTS DE EQUIPO (Persona 1 / Capitán) -->
+<!-- ==============================================
+       INTEGRACIÓN DE SCRIPTS JAVASCRIPT
+       ============================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/Ofertas.js"></script>
+  <script src="js/form.js"></script>
+  <script src="js/animation.js"></script>
 
-  <!-- 📥 INTEGRACIÓN JAVASCRIPT: COMPAÑEROS INYECTAN SUS SCRIPTS AQUÍ -->
-  <!-- Persona 2 (Vitrina y Carrito LocalStorage) -->
-  <!-- <script src="js/products.js"></script> -->
-  
-  <!-- Persona 3 (Servicios y Reloj Countdown Oferta) -->
-  <!-- <script src="js/offers.js"></script> -->
-  
-  <!-- Persona 4 (Validación de Formulario) -->
-  <!-- <script src="js/form.js"></script> -->
-  
-  <!-- Persona 4 (Animaciones de Scroll) -->
-  <!-- <script src="js/animations.js"></script> -->
+  <!-- Respaldo automático para Ofertas y Temporizador si falla la ruta del archivo externo -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.ofertasInicializadas) return;
+      window.ofertasInicializadas = true;
+
+      const PRODUCTS = [
+        {id:101, name:"Mancuernas hexagonales 20 kg (par)", cat:"Equipos", price:1890, old:2700},
+        {id:102, name:"Barra olímpica 20 kg", cat:"Equipos", price:3290, old:4390},
+        {id:103, name:"Discos bumper 10 kg (par)", cat:"Equipos", price:1490, old:1990},
+        {id:104, name:"Kettlebell 16 kg", cat:"Equipos", price:790, old:1150},
+        {id:105, name:"Tapete de goma 120 x 60 cm", cat:"Equipos", price:590, old:790},
+        {id:106, name:"Muñequeras de soporte", cat:"Protección", price:249, old:420},
+        {id:107, name:"Cinturón de levantamiento", cat:"Protección", price:690, old:990},
+        {id:108, name:"Straps de agarre", cat:"Protección", price:179, old:299},
+        {id:109, name:"Rodilleras de neopreno", cat:"Protección", price:449, old:600},
+        {id:110, name:"Proteína whey 2 kg", cat:"Suplementos", price:849, old:1299},
+        {id:111, name:"Creatina monohidratada 300 g", cat:"Suplementos", price:399, old:560},
+        {id:112, name:"Pre-entreno 30 porciones", cat:"Suplementos", price:529, old:790}
+      ];
+      const CATS = ["Todo", "Equipos", "Protección", "Suplementos"];
+      const pct = p => Math.round((1 - p.price / p.old) * 100);
+      const SORTS = [
+        ["Mayor descuento", (a, b) => pct(b) - pct(a)],
+        ["Precio: menor a mayor", (a, b) => a.price - b.price],
+        ["Precio: mayor a mayor", (a, b) => b.price - a.price]
+      ];
+      const money = n => "$" + n.toLocaleString("es-MX");
+      const $ = id => document.getElementById(id);
+      let cat = "Todo", sort = 0;
+
+      function renderTabs() {
+        if ($("tabs")) {
+          $("tabs").innerHTML = CATS.map(c =>
+            `<li role="presentation"><button role="tab" aria-selected="${c === cat}" data-c="${c}">${c}</button></li>`
+          ).join("");
+        }
+      }
+
+      function renderSort() {
+        if ($("sortMenu")) {
+          $("sortMenu").innerHTML = SORTS.map((s, i) =>
+            `<li><button class="dropdown-item ${i === sort ? "active" : ""}" data-s="${i}">${s[0]}</button></li>`
+          ).join("");
+        }
+      }
+
+      function renderGrid() {
+        if (!$("grid") \vert{}\vert{} !$("count")) return;
+        const list = PRODUCTS.filter(p => cat === "Todo" || p.cat === cat).sort(SORTS[sort][1]);
+        $("count").textContent = list.length + (list.length === 1 ? " producto en descuento" : " productos en descuento");
+        $("grid").innerHTML = list.length ? list.map(p => `
+          <div class="col">
+            <article class="sc-item">
+              <div class="sc-tile">
+                <span class="sc-big" aria-hidden="true">${pct(p)}%</span>
+                <span class="sc-badge">-${pct(p)}%</span>
+                <button class="btn sc-add" data-add="${p.id}" aria-label="Agregar ${p.name} al carrito">Agregar</button>
+              </div>
+              <div class="sc-info">
+                <div><span class="sc-now">${money(p.price)}</span><span class="sc-was">${money(p.old)}</span></div>
+                <div class="sc-name">${p.name}</div>
+                <div class="sc-cat">${p.cat}</div>
+              </div>
+            </article>
+          </div>`).join("") : `<p class="sc-empty">No hay ofertas en esta categoría por ahora.</p>`;
+      }
+
+      const END = (() => {
+        const fin = new Date();
+        const diasParaDomingo = (7 - fin.getDay()) % 7;
+        fin.setDate(fin.getDate() + diasParaDomingo);
+        fin.setHours(23, 59, 59, 999);
+        if (fin <= new Date()) fin.setDate(fin.getDate() + 7);
+        return fin;
+      })();
+
+      function tick() {
+        const t = Math.max(0, END - new Date()) / 1000;
+        const v = [
+          Math.floor(t / 86400),
+          Math.floor((t % 86400) / 3600),
+          Math.floor((t % 3600) / 60),
+          Math.floor(t % 60)
+        ];
+        ["d", "h", "m", "s"].forEach((id, i) => {
+          const el = $(id);
+          if (el) el.textContent = String(v[i]).padStart(2, "0");
+        });
+      }
+
+      if ($("total")) $("total").textContent = PRODUCTS.length;
+      renderTabs();
+      renderSort();
+      renderGrid();
+      tick();
+      setInterval(tick, 1000);
+
+      document.addEventListener("click", e => {
+        const tabBtn = e.target.closest("[data-c]");
+        if (tabBtn) { cat = tabBtn.dataset.c; renderTabs(); renderGrid(); }
+
+        const sortBtn = e.target.closest("[data-s]");
+        if (sortBtn) { sort = +sortBtn.dataset.s; renderSort(); renderGrid(); }
+
+        const addBtn = e.target.closest("[data-add]");
+        if (addBtn) {
+          const p = PRODUCTS.find(x => x.id === +addBtn.dataset.add);
+          if (p) {
+            document.dispatchEvent(new CustomEvent("agregar-producto", {
+              detail: {
+                id: p.id,
+                nombre: p.name + " (Oferta)",
+                precio: p.price,
+                imagen: `https://placehold.co/600x450/141A29/FF2A5F?text=-${pct(p)}%25+Oferta`
+              }
+            }));
+          }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
