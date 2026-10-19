@@ -6,7 +6,7 @@ const productos = [
     precio: 1850,
     publico: "Casa / Gym",
     descripcion: "Recubrimiento de caucho",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Mancuernas+15kg"
+    imagen: "assets/products/mancuernas.jpg"
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ const productos = [
     precio: 2490,
     publico: "Ideal Casa",
     descripcion: "Reemplaza 15 pares",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=SmartDial+24kg"
+    imagen: "assets/products/mancuerna-ajustable.jpg"
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ const productos = [
     precio: 3900,
     publico: "Casa / Gym",
     descripcion: "Soporta hasta 680 kg",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Barra+Olimpica"
+    imagen: "assets/products/barra-olimpica.jpg"
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const productos = [
     precio: 4200,
     publico: "Ideal Casa",
     descripcion: "Absorción de impacto",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Discos+Bumper"
+    imagen: "assets/products/discos-bumper.jpg"
   },
   {
     id: 5,
@@ -42,7 +42,7 @@ const productos = [
     precio: 3150,
     publico: "Ideal Casa",
     descripcion: "7 ángulos de respaldo",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Banco+FID"
+    imagen: "assets/products/banco-fid.jpg"
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ const productos = [
     precio: 5800,
     publico: "Ideal Casa",
     descripcion: "Ahorra espacio, solo 15 cm",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Half+Rack"
+    imagen: "assets/products/half-rack.jpg"
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ const productos = [
     precio: 980,
     publico: "Uso Gym",
     descripcion: "Hebilla de palanca",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Cinturon+10mm"
+    imagen: "assets/products/cinturon.jpg"
   },
   {
     id: 8,
@@ -69,9 +69,23 @@ const productos = [
     precio: 650,
     publico: "Uso Gym",
     descripcion: "Agarre antideslizante",
-    imagen: "https://placehold.co/600x450/141A29/F4F6FA?text=Kit+Gym+Bag"
+    imagen: "assets/products/kit-gym.jpg"
   }
 ];
+const PRODUCTS = [
+    {id:101, name:"Mancuernas hexagonales 20 kg (par)", cat:"Equipos", price:1890, old:2700, img:"assets/products/mancuernas.jpg"},
+    {id:102, name:"Barra olímpica 20 kg", cat:"Equipos", price:3290, old:4390, img:"assets/products/barra-olimpica.jpg"},
+    {id:103, name:"Discos bumper 10 kg (par)", cat:"Equipos", price:1490, old:1990, img:"assets/products/discos-bumper.jpg"},
+    {id:104, name:"Kettlebell 16 kg", cat:"Equipos", price:790, old:1150},
+    {id:105, name:"Tapete de goma 120 x 60 cm", cat:"Equipos", price:590, old:790},
+    {id:106, name:"Muñequeras de soporte", cat:"Protección", price:249, old:420},
+    {id:107, name:"Cinturón de levantamiento", cat:"Protección", price:690, old:990, img:"assets/products/cinturon.jpg"},
+    {id:108, name:"Straps de agarre", cat:"Protección", price:179, old:299},
+    {id:109, name:"Rodilleras de neopreno", cat:"Protección", price:449, old:600},
+    {id:110, name:"Proteína whey 2 kg", cat:"Suplementos", price:849, old:1299},
+    {id:111, name:"Creatina monohidratada 300 g", cat:"Suplementos", price:399, old:560},
+    {id:112, name:"Pre-entreno 30 porciones", cat:"Suplementos", price:529, old:790}
+  ];
 
 const categorias = [
   "Todos",
