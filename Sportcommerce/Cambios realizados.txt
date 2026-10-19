@@ -1,0 +1,79 @@
+<!-- 
+  =============================================================================
+  NOTAS Y CAMBIOS DE INTEGRACIÓN EN INDEX.HTML:
+  1. Hojas de Estilo (Head):
+     - Se vinculó 'css/Ofertas.css' después de Bootstrap para permitir la integración 
+       visual de las tarjetas de ofertas y la cuenta regresiva.
+  2. Sección #ofertas:
+     - Se integraron los contenedores con los IDs exactos requeridos por 'Ofertas.js':
+       * ID 'total': Para mostrar el número total de productos en oferta.
+       * IDs 'd', 'h', 'm', 's': Asignados a los elementos <strong> dentro del timer 
+         para que la función tick() actualice el conteo regresivo en tiempo real.
+       * ID 'tabs': Para renderizar dinámicamente los botones de categorías de oferta.
+       * ID 'sortMenu': Para inyectar el menú desplegable de ordenamiento de precios.
+       * ID 'grid': Contenedor principal donde se pintan las tarjetas de ofertas.
+  3. Sección #servicios:
+     - Se maquetó la estructura estática de las 4 tarjetas de servicios dentro de
+       '#services-container' para reemplazar el texto de carga provisional ("Cargando...").
+  4. Componentes Globales:
+     - Se añadió el contenedor de notificación 'toast' de Bootstrap en la parte inferior 
+       para mostrar confirmaciones al agregar ofertas al carrito.
+  5. Carga de Scripts (Footer):
+     - Se ordenaron los scripts cargando primero Bootstrap JS, seguido de main.js, 
+       products.js (type="module"), cart.js, Ofertas.js (con 'defer'), form.js y animation.js.
+  =============================================================================
+-->
+
+
+<!-- 
+  =============================================================================
+  NOTAS Y CAMBIOS DE INTEGRACIÓN EN INDEX.HTML:
+  1. Hojas de Estilo (Head):
+     - Se vinculó 'css/Ofertas.css' después de Bootstrap para permitir la integración 
+       visual de las tarjetas de ofertas y la cuenta regresiva.
+  2. Sección #ofertas:
+     - Se integraron los contenedores con los IDs exactos requeridos por 'Ofertas.js':
+       * ID 'total': Para mostrar el número total de productos en oferta.
+       * IDs 'd', 'h', 'm', 's': Asignados a los elementos <strong> dentro del timer 
+         para que la función tick() actualice el conteo regresivo en tiempo real.
+       * ID 'tabs': Para renderizar dinámicamente los botones de categorías de oferta.
+       * ID 'sortMenu': Para inyectar el menú desplegable de ordenamiento de precios.
+       * ID 'grid': Contenedor principal donde se pintan las tarjetas de ofertas.
+  3. Sección #servicios:
+     - Se maquetó la estructura estática de las 4 tarjetas de servicios dentro de
+       '#services-container' para reemplazar el texto de carga provisional ("Cargando...").
+  4. Componentes Globales:
+     - Se añadió el contenedor de notificación 'toast' de Bootstrap en la parte inferior 
+       para mostrar confirmaciones al agregar ofertas al carrito.
+  5. Carga de Scripts (Footer):
+     - Se ordenaron los scripts cargando primero Bootstrap JS, seguido de main.js, 
+       products.js (type="module"), cart.js, Ofertas.js (con 'defer'), form.js y animation.js.
+  =============================================================================
+-->
+
+/**
+ * =============================================================================
+ * NOTAS Y CAMBIOS DE INTEGRACIÓN EN JS/PRODUCTS.JS:
+ * 1. Control de Errores en la Línea 98 (Inyección de Vitrina):
+ *    - Se envolvió la renderización de la vitrina en una condición de seguridad:
+ *      'if (contenedor && Array.isArray(filtrados))'
+ *    - Esto previene el error 'TypeError: Cannot read properties of null (reading map)'
+ *      en caso de que el contenedor '#lista-productos' no se encuentre disponible
+ *      al momento del filtrado inicial.
+ * 2. Limpieza de Cadenas HTML:
+ *    - Se aseguró el uso del método '.join("")' al final del '.map()' para evitar 
+ *      que comas residuales aparezcan impresas entre las tarjetas de productos.
+ * =============================================================================
+ */
+
+/* 
+  =============================================================================
+  NOTAS Y CAMBIOS DE AJUSTE EN CSS/OFERTAS.CSS:
+  1. Armonización con base.css:
+     - Se respetaron las variables de color globales del proyecto (--sc-dark, --sc-red).
+  2. Parche de Reescritura de Bootstrap:
+     - Se acotaron los estilos de '.sc-nav', '.sc-hero' y '.sc-timer' para que solo
+       afecten a la sección #ofertas y no desalineen la barra de navegación principal (Navbar)
+       ni el Hero global declarados en base.css por Persona 1.
+  =============================================================================
+*/
